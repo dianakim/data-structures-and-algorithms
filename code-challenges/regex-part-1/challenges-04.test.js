@@ -29,8 +29,8 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let regex = /\b[A-Z]\w+\b/g;
-  return [str.match(regex)];
+  let regex = /\b[A-Z]\w*\b/g;
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,6 +67,8 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  let regex = /\b[Oo](ct)(ober)?\b/g;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
