@@ -41,11 +41,16 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let regex = /'[A-J]\w+'|"[A-J]\w+"/g;
-  let newArr = arr.match(regex);
-  let quotesRexEx = /'|"/g;
-  let finalArr = newArr.replace(quotesRexEx, '');
-  return finalArr;
+  let matchesArr = [];
+  let regex = /^[A-J]\w*\s*$/;
+  arr.forEach(function(value){
+    let isAMatch = regex.test(value);
+    if(isAMatch){
+      matchesArr.push(value);
+    }
+  });
+  return matchesArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
