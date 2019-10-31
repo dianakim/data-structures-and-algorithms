@@ -170,8 +170,8 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-   // Solution code here...
-   if (numberOfCharacters > str.length) {
+  // Solution code here...
+  if (numberOfCharacters > str.length) {
     return '';
   }
   if (numberOfCharacters < 0) {
@@ -213,6 +213,8 @@ For example, removeVowels('gregor') returns 'grgr'.
 
 const removeVowels = (str) => {
   // Solution code here...
+  let regex = /[aeiou]+/g;
+  return str.replace(regex, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -314,7 +316,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return the string without vowels', () => {
     expect(removeVowels('gregor')).toStrictEqual('grgr');
     expect(removeVowels('gregor').length).toStrictEqual(4);
