@@ -229,7 +229,7 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 
 const extractVowels = (str) => {
   // Solution code here...
-  let regex = /[aeiou]/g; 
+  let regex = /[aeiou]/g;
   let vowelsFound = (str.match(regex)).sort();
   return [str.replace(regex, ''), vowelsFound.join('')];
 };
