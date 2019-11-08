@@ -74,7 +74,7 @@ const getHouses = (arr) => {
   // Solution code here...
   Object.values(arr).forEach( character => {
     houses.push(character.house);
-  })
+  });
 
   return houses;
 };
@@ -93,7 +93,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let exists = false;
+  let hasChildren = false;
 
+  arr.forEach(characterObject => {
+    let characterName = Object.values(characterObject.name).join('');
+    
+    if (characterName === character) {
+      hasChildren = (characterObject.children.length > 0);
+      exists = true;
+    }
+  });
+
+  return (exists && hasChildren);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,9 +117,24 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  // Solution code here...3.
+  let exists = false;
+  let hasChildren = false;
+  
+  arr.forEach( characterObject => {
+    let currentCharacter = Object.entries(characterObject);
+    let characterName = currentCharacter[0][1];
+
+    if (characterName === character) {
+      hasChildren = currentCharacter[2][1].length > 0;
+      exists = true;
+    }
+
+  });
+  return (exists && hasChildren);
 };
 
+// TODO:
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -118,6 +145,7 @@ const totalCharacters = (arr) => {
   // Solution code here...
 };
 
+// TODO:
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
@@ -134,6 +162,7 @@ const houseSize = (arr) => {
   return sizes;
 };
 
+// TODO:
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
@@ -182,7 +211,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
@@ -192,7 +221,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
