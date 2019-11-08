@@ -120,7 +120,7 @@ const hasChildrenEntries = (arr, character) => {
   // Solution code here...3.
   let exists = false;
   let hasChildren = false;
-  
+
   arr.forEach( characterObject => {
     let currentCharacter = Object.entries(characterObject);
     let characterName = currentCharacter[0][1];
@@ -134,7 +134,6 @@ const hasChildrenEntries = (arr, character) => {
   return (exists && hasChildren);
 };
 
-// TODO:
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -143,6 +142,19 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  let allEntries = Object.entries(arr);
+  let characters = [];
+
+  for ( let mainCharacterIndex in allEntries) {
+    characters.push(allEntries[mainCharacterIndex][1].name);
+    if (allEntries[mainCharacterIndex][1].spouse !== null && allEntries[mainCharacterIndex][1].spouse !== undefined) {
+      characters.push(allEntries[mainCharacterIndex][1].spouse);
+    }
+    if (allEntries[mainCharacterIndex][1].children !== null && allEntries[mainCharacterIndex][1].children !== undefined) {
+      characters.push(...allEntries[mainCharacterIndex][1].children);
+    }
+  }
+  return characters.length;
 };
 
 // TODO:
@@ -231,7 +243,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the number of characters in the array', () => {
     expect(totalCharacters(characters)).toStrictEqual(26);
   });
