@@ -89,6 +89,20 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
+  let BoolOrNaArr = [];
+  arr.map( (value, i) => {
+    if (isNaN(value)) {
+      BoolOrNaArr.push('N/A');
+    }
+    if (value % 2) { // if odd number
+      BoolOrNaArr.push('odd');
+    } 
+    if (value % 2 === 0) {
+      BoolOrNaArr.push('even');
+    }
+  });
+
+  return BoolOrNaArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -235,7 +249,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
