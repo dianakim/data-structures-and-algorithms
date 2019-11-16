@@ -286,6 +286,15 @@ const extractChildren = (arr) => {
   return childrensNames;
 };
 
+/////// Leo's solution to #8
+const extractChildren = (arr) => {
+  const charactersWithA = arr.filter( character => /a/i.test(character.name));
+  return charactersWithA.reduce( (kids, character) => {
+    character.children ? kids.push(...character.children) : null;
+    return kids;
+  }, []);
+ };
+
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
