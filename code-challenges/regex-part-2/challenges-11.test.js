@@ -63,25 +63,6 @@ const validatePhoneNumber = (phoneNumber) => {
   return regex.test(phoneNumber);
 };
 
-console.log(validatePhoneNumber('(555) 555-5555'));
-console.log(validatePhoneNumber('555 555-5555'));
-console.log(validatePhoneNumber('555-555-5555'));
-console.log(validatePhoneNumber('555 5555555'));
-console.log(validatePhoneNumber('5555555555'));
-console.log(validatePhoneNumber('234 567 8910'));
-console.log();
-console.log(validatePhoneNumber('abcdefghij'));
-console.log(validatePhoneNumber('222 222 2222 ext. 2222'));
-console.log(validatePhoneNumber('(222 222-2222'));
-console.log(validatePhoneNumber('222 222-2222-'));
-console.log(validatePhoneNumber('(222 222- 2222'));
-console.log(validatePhoneNumber('(222 222 -2222'));
-console.log(validatePhoneNumber('523 555--5555'));
-console.log(validatePhoneNumber('55555555555'));
-console.log(validatePhoneNumber('55555555555'));
-console.log(validatePhoneNumber('55555555555'));
-console.log(validatePhoneNumber('55_55_5555'));
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
 
@@ -93,7 +74,15 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 
 const findTagNames = elements => {
   // Solution code here...
+  const regex = /<(\/.*?)>/;
+  const matchesArr = elements.map( str => {
+    return str.match(regex)[1];
+  })
+  return matchesArr;
 };
+
+// findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>']);
+findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>']);
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
