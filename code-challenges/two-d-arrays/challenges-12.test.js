@@ -21,24 +21,24 @@ const capHill = [5, 85, 58, 51, 50, 13, 33, 32, 47, 94, 31, 62];
 const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
-const cookieSalesPerHour = [];
 
 const grandTotal = (stores) => {
   // Solution code here...
+  const hourlySales = [];
   // Outer loop = for each hour in hoursOpen
   for(let i = 0; i < hoursOpen.length; i++){
   // Inner loop = for each store in the stores array
     for(let j = 0; j < stores.length; j++){
     // add the value at i to the value at i in the cookieSalesPerHour array
-      if(cookieSalesPerHour[i]){
-        cookieSalesPerHour[i] = cookieSalesPerHour[i] + stores[j][i];
+      if(hourlySales[i]){
+        hourlySales[i] = hourlySales[i] + stores[j][i];
       }
-      if(!cookieSalesPerHour[i]){
-        cookieSalesPerHour.push(stores[j][i]);
+      if(!hourlySales[i]){
+        hourlySales.push(stores[j][i]);
       }
     }
   }
-  return cookieSalesPerHour;
+  return hourlySales;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,6 +53,12 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  const salesDataObj = [];
+
+  data.forEach( (sale, idx) => {
+    salesDataObj[idx] = {sales: sale + ' cookies', time: hours[idx]};
+  });
+  return salesDataObj;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -186,7 +192,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should create an object of data for each store', () => {
     expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
       { sales: '88 cookies', time: '9 a.m.' },
