@@ -235,8 +235,8 @@ const excel = (str) => {
     rowTotals.push(rowTotal);
     console.log('rowTotals: ', rowTotals);
     console.log('rowTotals.length: ', rowTotals.length);
-    return rowTotals;
   });
+  return rowTotals;
 };
 
 /* ------------------------------------------------------------------------------------------------
