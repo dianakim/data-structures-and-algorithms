@@ -61,7 +61,7 @@ const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
   const regex = /^(\(\d\d\d\)|\d\d\d)[\s\-]?\d\d\d[\s\-]?\d\d\d\d$/;
   return regex.test(phoneNumber);
-};
+};()
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
