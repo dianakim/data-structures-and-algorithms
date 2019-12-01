@@ -13,14 +13,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
-  // number of times target is in input
-  input.forEach( innerArr => {
-    let matchesArr = innerArr.filter( val => {
-      
-    });
-    console.log('matches: ', matchesArr);
-    return matchesArr.length;
-  });
+    let timesOccurs = input.reduce( (arrOfFivesFound, value, idx) => {
+    value.forEach( subValue => {
+      if (subValue === target) {
+        arrOfFivesFound.push(subValue);
+      }
+    })
+    return arrOfFivesFound;
+  }, []);
+  return timesOccurs.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
