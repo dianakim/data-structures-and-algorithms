@@ -23,7 +23,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
-
+  let matches = arr.reduce( (acc, currentStr, idx) => {
+    if(currentStr.includes(':)')){
+      acc.push(currentStr);
+    }
+    return acc;
+  },[]);
+  return matches;
 };
 
 /* ------------------------------------------------------------------------------------------------
