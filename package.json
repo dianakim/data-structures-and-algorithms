@@ -12,7 +12,6 @@
   "license": "MIT",
   "dependencies": {
     "jest": "^24.1.0",
-    "node": "^10.16.3",
-    "acorn": ">=5.7.4"
+    "node": "^10.16.3"
   }
 }
