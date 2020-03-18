@@ -1,6 +1,7 @@
-# LAB - Class 01
+# Code Challenge - Class 01
 
-## Code Challenge - Array Reverse
+# Reverse an Array
+<!-- Short summary or background information -->
 
 ### Author: Diana Kim
 
@@ -8,8 +9,16 @@
 
 - [submission PR](http://xyz.com)
 - [ci/cd](https://github.com/dianakim/data-structures-and-algorithms/actions)
-- [back-end server url](http://xyz.com) (when applicable)
-- [front-end application](http://xyz.com) (when applicable)
+
+## Challenge
+<!-- Description of the challenge -->
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution
+<!-- Embedded whiteboard image -->
+
 
 ### Setup
 * `npm install`
@@ -34,3 +43,6 @@ i.e.
 
 #### UML
 ![UML Diagram](uml.png)
+
+#### Whiteboard
+![Whiteboard](whiteboard.png)
