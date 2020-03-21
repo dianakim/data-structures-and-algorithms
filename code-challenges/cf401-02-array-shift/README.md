@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [submission PR](http://xyz.com)
+- [submission PR](https://github.com/dianakim/data-structures-and-algorithms/pull/31)
 - [ci/cd](https://github.com/dianakim/data-structures-and-algorithms/actions)
 
 ## Challenge
