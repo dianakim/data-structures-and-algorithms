@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [submission PR](https://github.com/dianakim/data-structures-and-algorithms/pull/31)
+- [submission PR](https://github.com/dianakim/data-structures-and-algorithms/pull/32)
 - [ci/cd](https://github.com/dianakim/data-structures-and-algorithms/actions)
 
 ## Challenge
@@ -16,4 +16,4 @@ Write a function called insertShiftArray which takes in an array and the value t
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 ## Solution
-![Whiteboard](whiteboard.png)
+![Whiteboard](./assets/array-shift.png)
